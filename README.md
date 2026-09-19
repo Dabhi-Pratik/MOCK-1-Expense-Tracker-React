@@ -1,11 +1,13 @@
 # 💰 MOCK-1 Expense Tracker – React
 
-A modern and responsive **Expense Tracker Web Application** built using **React.js** and **Vite**.
+A responsive **Expense Tracker web application** built using **React.js**. This project was developed as a React mock/practical project to demonstrate my understanding of React components, Context API, state management, forms, CRUD operations, and responsive UI design.
 
-This project allows users to manage their daily expenses by adding expense details such as title, name, category, description, amount, and transaction type. It also provides a structured view of all recorded expenses with options to manage and delete expense records.
+The application allows users to add, view, and delete expense records while maintaining the expense data using React state and Context API.
 
-🔗 **Live Demo:**
-https://mock-1-expense-tracker-react.vercel.app/
+## 🚀 Live Demo
+
+🔗 **Live Website:**
+https://mock-1-expense-tracker-react.vercel.app
 
 🔗 **GitHub Repository:**
 https://github.com/Dabhi-Pratik/MOCK-1-Expense-Tracker-React
@@ -14,27 +16,22 @@ https://github.com/Dabhi-Pratik/MOCK-1-Expense-Tracker-React
 
 ## 📌 About The Project
 
-**MOCK-1 Expense Tracker** is a React-based project developed to practice and demonstrate important concepts of modern React development.
+The **Expense Tracker** is a React-based application designed to manage daily expense records.
 
-The application provides an easy-to-use interface for maintaining expense records. Users can enter expense information through a form and view the stored expenses in a structured table.
+I created this project to practice building a complete React application using reusable components and centralized state management.
 
-The project focuses on:
+The application provides a simple interface where users can:
 
-* React Components
-* React Context API
-* `useState`
-* `useContext`
-* `useReducer`
-* State Management
-* Dynamic Rendering
-* Event Handling
-* Form Handling
-* CRUD-style operations
-* Responsive UI
-* React Bootstrap
-* Vite development environment
+* Add new expenses
+* Enter expense details through a form
+* View all added expenses
+* Delete existing expenses
+* Categorize expenses
+* Specify whether an expense is debit or credit
+* Manage expense data using React Context API
+* Display expense information in a structured table
 
-This project was developed as a **Frontend React Mock Project** to strengthen practical React development skills.
+The project focuses on implementing the core concepts of React rather than using a backend database.
 
 ---
 
@@ -42,61 +39,75 @@ This project was developed as a **Frontend React Mock Project** to strengthen pr
 
 ### ➕ Add Expense
 
-Users can add a new expense by entering:
+Users can add a new expense by entering details such as:
 
-* Expense Title
+* Expense title
 * Name
 * Category
 * Description
 * Amount
-* Transaction Type
+* Expense type
 
-Example transaction types:
+The entered information is stored in the application's React state.
 
-* Debit
-* Credit
+### 📋 Expense List
 
----
+All available expenses are displayed in a structured table.
 
-### 📋 View Expense List
+The table contains information such as:
 
-All added expenses are displayed in a structured table.
-
-The expense list contains information such as:
-
-| Field       | Description               |
-| ----------- | ------------------------- |
-| ID          | Unique expense identifier |
-| Title       | Title of the expense      |
-| Name        | Expense name              |
-| Category    | Expense category          |
-| Description | Additional information    |
-| Amount      | Expense amount            |
-| Type        | Debit/Credit              |
-
----
+| Field       | Description                      |
+| ----------- | -------------------------------- |
+| ID          | Unique identifier of the expense |
+| Title       | Title of the expense             |
+| Name        | Name associated with the expense |
+| Category    | Expense category                 |
+| Description | Details about the expense        |
+| Amount      | Expense amount                   |
+| Type        | Debit/Credit                     |
 
 ### 🗑️ Delete Expense
 
-Users can remove an expense from the list using the delete functionality.
+Users can remove an expense from the expense list using the delete functionality.
 
-The expense state is updated dynamically without refreshing the page.
+The delete operation updates the React state and immediately reflects the changes in the UI.
 
----
+### 🔄 Context API
 
-### 🔄 Centralized State Management
+I used **React Context API** to manage expense-related data globally.
 
-The application uses the **React Context API** along with `useReducer()` to manage expense data.
+Instead of passing the expense list and functions through multiple components using props, the `ExpenseContext` provides shared access to:
 
-This makes the expense state accessible across different components without passing props through multiple levels.
+* Expense list
+* Add Expense function
+* Delete Expense function
+* Expense state management
 
----
+### ⚛️ React State Management
 
-### 📱 Responsive Interface
+The application uses React's state management concepts to handle dynamic expense data.
 
-The UI is designed to work across different screen sizes.
+I implemented:
 
-The project uses **React Bootstrap** components for creating a clean and responsive interface.
+* `useState`
+* `useContext`
+* `useReducer`
+
+The `useReducer` hook is used to manage expense-related actions in a centralized way.
+
+### 🧩 Reusable Components
+
+The application is divided into multiple React components to keep the project organized and maintainable.
+
+Components are responsible for individual tasks such as:
+
+* Adding expenses
+* Displaying expense data
+* Managing expense state
+
+### 📱 Responsive UI
+
+The interface is designed to work across different screen sizes and provide a clean user experience.
 
 ---
 
@@ -109,17 +120,19 @@ The project uses **React Bootstrap** components for creating a clean and respons
 * **HTML5**
 * **CSS3**
 
-### UI / Styling
+### React Concepts
 
-* **React Bootstrap**
-* **Bootstrap**
-
-### State Management
-
-* **React Context API**
-* **useReducer**
-* **useContext**
-* **useState**
+* React Functional Components
+* `useState`
+* `useContext`
+* `useReducer`
+* React Context API
+* Props
+* Event Handling
+* Conditional Rendering
+* Form Handling
+* Array Methods
+* CRUD Operations
 
 ### Development Tools
 
@@ -135,13 +148,12 @@ The project uses **React Bootstrap** components for creating a clean and respons
 
 ---
 
-## 🏗️ Project Structure
+## 📂 Project Structure
 
 ```text
 MOCK-1-Expense-Tracker-React/
 │
 ├── public/
-│   └── ...
 │
 ├── src/
 │   │
@@ -164,463 +176,314 @@ MOCK-1-Expense-Tracker-React/
 └── README.md
 ```
 
-> The exact folder structure may vary depending on the latest version of the project.
+> The exact file structure may change as the project is further developed.
 
 ---
 
-# 🔄 Application Flow
+## 🔄 Application Workflow
 
-The basic flow of the application is:
+The basic workflow of the application is:
 
 ```text
-             ┌──────────────────┐
-             │   Expense Form   │
-             └────────┬─────────┘
-                      │
-                      ▼
-             ┌──────────────────┐
-             │   Add Expense    │
-             └────────┬─────────┘
-                      │
-                      ▼
-             ┌──────────────────┐
-             │ Expense Context  │
-             │    + Reducer     │
-             └────────┬─────────┘
-                      │
-                      ▼
-             ┌──────────────────┐
-             │   Expense List   │
-             └────────┬─────────┘
-                      │
-              ┌───────┴────────┐
-              ▼                ▼
-        View Expense       Delete Expense
+User
+  │
+  ▼
+Add Expense Form
+  │
+  ▼
+Enter Expense Details
+  │
+  ▼
+Add Expense
+  │
+  ▼
+Expense Context
+  │
+  ▼
+Expense State
+  │
+  ▼
+Expense List
+  │
+  ├── View Expense
+  │
+  └── Delete Expense
 ```
 
 ---
 
-# ⚛️ React Concepts Used
+## 🧠 How I Built The Project
 
-## 1. Components
+### 1. Created the React Application
 
-The application is divided into reusable React components.
+I started the project using **Vite** to create a fast React development environment.
 
-For example:
+The project was structured into reusable components instead of keeping all the code inside a single component.
 
-```jsx
-<AddExpense />
-<ExpenseData />
+### 2. Created Expense Context
+
+I created an `ExpenseContext` to manage expense-related information.
+
+The context provides a centralized location for managing the expense list and expense operations.
+
+Conceptually:
+
+```text
+ExpenseContext
+      │
+      ├── expenseList
+      │
+      ├── AddExpense()
+      │
+      └── handleDelete()
 ```
 
-This makes the application easier to maintain and understand.
+This allows different components to access the same expense data without unnecessary prop drilling.
 
----
+### 3. Created Add Expense Form
 
-## 2. useState
+I created an `AddExpense` component containing form fields for entering expense information.
 
-`useState` is used to manage form input values.
+The form maintains input values and updates them when the user enters data.
 
-Example:
-
-```jsx
-const [input, setInput] = useState({
-  title: "",
-  name: "",
-  category: "",
-  description: "",
-  amount: 0,
-  type: "",
-});
-```
-
-Whenever the user changes an input field, the state is updated.
-
----
-
-## 3. Context API
-
-The project uses React's Context API to share expense-related data between components.
-
-Example:
-
-```jsx
-const { expenseList, AddExpense } = useContext(ExpenseContext);
-```
-
-This avoids unnecessary prop drilling.
-
----
-
-## 4. useReducer
-
-`useReducer` is used for managing expense state and performing actions such as:
-
-* Adding an expense
-* Deleting an expense
-* Updating the expense list
-
-A reducer provides a centralized way to update application state.
-
-Example concept:
-
-```jsx
-const [state, dispatch] = useReducer(expenseReducer, initialValue);
-```
-
----
-
-## 5. Event Handling
-
-React event handlers are used to handle:
-
-* Input changes
-* Form submission
-* Button clicks
-* Delete operations
-
-Example:
-
-```jsx
-const handleChange = (field, value) => {
-  setInput({
-    ...input,
-    [field]: value,
-  });
-};
-```
-
----
-
-# 📊 Expense Data Model
-
-Each expense is represented as an object.
-
-Example:
+The expense object contains properties such as:
 
 ```javascript
 {
   id: 1,
-  title: "Food Expense",
+  title: "Expense",
   name: "Pizza",
   category: "General Expenses",
-  description: "Dinner with friends",
+  description: "General Expenses",
   amount: 300,
   type: "debit"
 }
 ```
 
-### Properties
+### 4. Added Expense Data
 
-| Property      | Type   | Description         |
-| ------------- | ------ | ------------------- |
-| `id`          | Number | Unique expense ID   |
-| `title`       | String | Expense title       |
-| `name`        | String | Name of expense     |
-| `category`    | String | Expense category    |
-| `description` | String | Expense description |
-| `amount`      | Number | Expense amount      |
-| `type`        | String | Transaction type    |
+When the user submits the form, the entered information is converted into an expense object and added to the expense list.
+
+The application then updates the UI automatically using React's state management.
+
+### 5. Displayed Expense Data
+
+I created an `ExpenseData` component to display the expense records.
+
+The component receives the expense list through `ExpenseContext` and dynamically renders each expense using JavaScript array methods.
+
+### 6. Implemented Delete Functionality
+
+A delete operation was implemented to remove individual expenses from the list.
+
+When the user clicks the delete button, the corresponding expense is removed and React re-renders the updated list.
 
 ---
 
-# 🚀 Getting Started
+## 🔧 State Management
 
-Follow these steps to run the project locally.
+One of the main purposes of this project was to practice React state management.
 
-## 1. Clone the Repository
+The application uses:
 
-Open your terminal and run:
+```text
+React Component
+      │
+      ▼
+ExpenseContext
+      │
+      ▼
+useReducer
+      │
+      ▼
+Expense State
+      │
+      ├── Add Expense
+      │
+      └── Delete Expense
+```
+
+Using Context API makes the expense data accessible to components without passing it manually through multiple levels.
+
+---
+
+## 📊 Expense Data Model
+
+Each expense is represented as an object.
+
+```javascript
+{
+  id: Number,
+  title: String,
+  name: String,
+  category: String,
+  description: String,
+  amount: Number,
+  type: String
+}
+```
+
+### Example
+
+```javascript
+{
+  id: 1,
+  title: "Food",
+  name: "Pizza",
+  category: "General Expenses",
+  description: "Dinner",
+  amount: 300,
+  type: "debit"
+}
+```
+
+---
+
+## 📦 Installation
+
+To run this project locally, first clone the repository:
 
 ```bash
 git clone https://github.com/Dabhi-Pratik/MOCK-1-Expense-Tracker-React.git
 ```
 
----
-
-## 2. Navigate to the Project
+Move into the project directory:
 
 ```bash
 cd MOCK-1-Expense-Tracker-React
 ```
 
----
-
-## 3. Install Dependencies
-
-Run:
+Install the required dependencies:
 
 ```bash
 npm install
 ```
 
-This installs all required dependencies from `package.json`.
-
----
-
-## 4. Start Development Server
-
-Run:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Vite will start the development server.
+The application will then be available on the local development server provided by Vite.
 
-You will see something similar to:
+---
+
+## 🖥️ Usage
+
+### Step 1
+
+Open the application.
+
+### Step 2
+
+Go to the **Add Expense** section.
+
+### Step 3
+
+Enter the required information:
 
 ```text
-Local: http://localhost:5173/
+Title
+Name
+Category
+Description
+Amount
+Type
 ```
 
-Open the displayed URL in your browser.
+### Step 4
+
+Submit the form.
+
+### Step 5
+
+The new expense will appear in the expense list.
+
+### Step 6
+
+Use the **Delete** button to remove an expense.
 
 ---
 
-# 🏭 Build For Production
+## 🎯 Learning Objectives
 
-To create a production build:
+Through this project, I practiced and improved my understanding of:
 
-```bash
-npm run build
-```
-
-The production files will be generated inside:
-
-```text
-dist/
-```
+* React component architecture
+* Functional components
+* React Hooks
+* `useState`
+* `useContext`
+* `useReducer`
+* Context API
+* Form handling
+* Controlled components
+* Event handling
+* CRUD operations
+* Dynamic rendering
+* JavaScript array methods
+* State updates
+* Component communication
+* Reusable React components
+* Project structure
+* Vite development environment
+* Git and GitHub
+* Vercel deployment
 
 ---
 
-# 👀 Preview Production Build
+## 🔮 Future Improvements
 
-After building the application, you can preview it locally using:
+The project can be further improved by adding:
 
-```bash
-npm run preview
-```
+* ✏️ Edit expense functionality
+* 🔍 Search expenses
+* 🏷️ Category-based filtering
+* 📅 Date-wise expense tracking
+* 📊 Expense charts and analytics
+* 💰 Total income and expense calculation
+* 💾 LocalStorage support
+* 🔐 User authentication
+* 🗄️ Backend API
+* ☁️ Database integration
+* 📱 Improved mobile interface
+* 📤 Export expenses to CSV/PDF
 
 ---
 
-# 🌐 Deployment
+## 🌐 Deployment
 
-The application is deployed using **Vercel**.
+The project is deployed using **Vercel**.
 
 ### Live Application
 
-🔗 https://mock-1-expense-tracker-react.vercel.app/
+https://mock-1-expense-tracker-react.vercel.app
 
-The project is connected to GitHub, allowing the application to be deployed and updated from the repository.
+The source code is available on GitHub:
 
----
-
-# 📸 Project Screenshots
-
-You can add screenshots of your application here.
-
-For example:
-
-```markdown
-## 📸 Screenshots
-
-### Add Expense
-
-![Add Expense](./screenshots/add-expense.png)
-
-### Expense List
-
-![Expense List](./screenshots/expense-list.png)
-```
-
-Recommended screenshots:
-
-1. Add Expense Form
-2. Expense List
-3. Delete Expense functionality
-4. Responsive/mobile view
+https://github.com/Dabhi-Pratik/MOCK-1-Expense-Tracker-React
 
 ---
 
-# 📂 Main Components
+## 👨‍💻 Developer
 
-## `AddExpense`
+**Pratik Dabhi**
 
-Responsible for collecting expense information from the user.
-
-### Responsibilities
-
-* Display expense form
-* Handle input changes
-* Store temporary form data
-* Submit expense information
-* Dispatch/add expense data
-
----
-
-## `ExpenseData`
-
-Responsible for displaying the stored expenses.
-
-### Responsibilities
-
-* Access expense data from Context
-* Display expense records
-* Display expense details
-* Provide delete functionality
-
----
-
-## `ExpenseContext`
-
-Responsible for managing the application's expense state.
-
-### Responsibilities
-
-* Store expense list
-* Provide expense actions
-* Manage reducer
-* Share state between components
-
----
-
-# 🔐 State Management Architecture
-
-The application follows a simple centralized state-management approach:
-
-```text
-                 ExpenseContext
-                       │
-                       ▼
-                useReducer()
-                       │
-             ┌─────────┴─────────┐
-             │                   │
-             ▼                   ▼
-       Add Expense          Delete Expense
-             │                   │
-             └─────────┬─────────┘
-                       ▼
-                 expenseList
-                       │
-                       ▼
-                 ExpenseData
-                       │
-                       ▼
-                 Display Table
-```
-
----
-
-# 💡 What I Learned From This Project
-
-This project helped me understand and practice several important React concepts:
-
-* Creating reusable React components
-* Managing form state using `useState`
-* Sharing state using Context API
-* Managing complex state using `useReducer`
-* Using `useContext`
-* Handling form inputs
-* Handling button events
-* Rendering dynamic lists
-* Working with JavaScript objects and arrays
-* Implementing delete functionality
-* Creating responsive layouts with Bootstrap
-* Structuring a React project
-* Using Vite for React development
-* Deploying a React application using Vercel
-* Managing source code using Git and GitHub
-
----
-
-# 🔮 Future Improvements
-
-The project can be extended with additional features in the future.
-
-### Possible improvements:
-
-* [ ] Edit expense
-* [ ] Search expenses
-* [ ] Filter by category
-* [ ] Filter by debit/credit
-* [ ] Sort expenses
-* [ ] Total income calculation
-* [ ] Total expense calculation
-* [ ] Current balance calculation
-* [ ] Expense charts
-* [ ] Monthly expense reports
-* [ ] LocalStorage support
-* [ ] User authentication
-* [ ] Database integration
-* [ ] Dark mode
-* [ ] Pagination
-* [ ] Export expenses to CSV/PDF
-
----
-
-# 🎯 Project Goals
-
-The main goals of this project were:
-
-1. To build a practical React application.
-2. To understand React state management.
-3. To practice Context API.
-4. To understand `useReducer`.
-5. To create reusable components.
-6. To practice form handling.
-7. To implement dynamic data rendering.
-8. To build a responsive user interface.
-9. To deploy a React application.
-10. To strengthen frontend development skills.
-
----
-
-# 📌 Project Information
-
-| Information      | Details                  |
-| ---------------- | ------------------------ |
-| Project Name     | MOCK-1 Expense Tracker   |
-| Project Type     | React Frontend Project   |
-| Framework        | React.js                 |
-| Build Tool       | Vite                     |
-| Language         | JavaScript               |
-| UI Library       | React Bootstrap          |
-| State Management | Context API + useReducer |
-| Deployment       | Vercel                   |
-| Repository       | GitHub                   |
-
----
-
-# 👨‍💻 Author
-
-## Pratik Dabhi
-
-Frontend / Full-Stack Developer
+IT Engineering Student | Frontend / Full-Stack Developer
 
 ### GitHub
 
-🔗 https://github.com/Dabhi-Pratik
-
-### Project Repository
-
-🔗 https://github.com/Dabhi-Pratik/MOCK-1-Expense-Tracker-React
-
-### Live Demo
-
-🔗 https://mock-1-expense-tracker-react.vercel.app/
+https://github.com/Dabhi-Pratik
 
 ---
 
-# ⭐ Support
+## ⭐ Project
 
-If you found this project useful or helpful for learning React, consider giving the repository a ⭐ on GitHub.
+If you find this project useful or interesting, feel free to explore the repository and check out the implementation.
 
 ---
 
-# 📄 License
+## 📄 License
 
-This project is created for **learning and educational purposes**.
-
-You are free to explore, modify, and improve the project for your own learning.
+This project is created for **learning, practice, and educational purposes**.
